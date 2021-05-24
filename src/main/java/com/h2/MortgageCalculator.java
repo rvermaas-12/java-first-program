@@ -33,15 +33,15 @@ public class MortgageCalculator {
     }
 
     public String toString() {
-        DecimalFormat df = null;
+        DecimalFormat df = new DecimalFormat("####0.00");
         return "monthlyPayment: " + df.format(monthlyPayment);
     }
 
     public static void main(String[] args) {
-        long loanAmount = args[0].Long.parseLong();
-        int termInYears = args[1].Integer.parseInt();
-        float annualRate = args[2].Float.parseFloat();
-        MortgageCalculator mortgageCalculator = new MortgageCalculator(600000, 20, 1.75f);
+        long loanAmount = Long.parseLong(args[0]);
+        int termInYears = Integer.parseInt(args[1]);
+        float annualRate = Float.parseFloat(args[2]);
+        MortgageCalculator calculator = new MortgageCalculator(loanAmount, termInYears, annualRate);
         calculator.calculateMonthlyPayment();
         System.out.println(calculator.toString());
     }
