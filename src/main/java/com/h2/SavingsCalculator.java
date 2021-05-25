@@ -1,6 +1,7 @@
 package com.h2;
 import java.time.LocalDate;
 import java.time.YearMonth;
+import com.h2.Utilities;
 
 public class SavingsCalculator {
     private float[] credits;
